@@ -29,6 +29,9 @@ function indent() {
   esac
 }
 
+# Append the test Aptfile to the Aptfile
+cat $BUILD_DIR/Aptfile-test >> $BUILD_DIR/Aptfile
+
 # Store which STACK we are running on in the cache to bust the cache if it changes
 if [ -f $CACHE_DIR/.apt/STACK ]; then
   CACHED_STACK=$(cat "$CACHE_DIR/.apt/STACK")
